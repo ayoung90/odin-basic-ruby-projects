@@ -23,6 +23,9 @@ def encode_cipher(input)
   encoded_array.join
 end
 
+# TODO: u. Find out how to do this properly
+return if $test_mode
+
 puts '#### Welcome to Ceaser Cipher (use !exit to quit) ####'
 print 'Enter shift: '
 init_shift_amount(gets.chomp.to_i)
