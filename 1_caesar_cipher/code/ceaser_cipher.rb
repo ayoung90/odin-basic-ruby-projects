@@ -7,7 +7,6 @@ def ceaser_cipher(string, shift_factor)
 
   encoded_array = string.split('').map do |char|
     if all_letters.include?(char)
-
       index = all_letters.index(char) + shift_factor
       index -= all_letters.length while index > all_letters.length
       all_letters[index]
@@ -17,5 +16,3 @@ def ceaser_cipher(string, shift_factor)
   end
   puts encoded_array.join
 end
-
-ceaser_cipher('hello w%rld', 150)
