@@ -1,22 +1,23 @@
-# test flag: used to skip input during rspec unit tests
-$test_mode = true
-
 require 'spec_helper'
 require_relative '../code/ceaser_cipher'
 
 RSpec.describe 'Ceaser Cipher' do
-  describe 'set shift amount' do
-    it 'sets $shift to 3' do
-      init_shift_amount(3)
-      expect($shift).to eq(3)
+  describe 'check cipher input values' do
+    it 'input hello world with factor 5' do
+      expect(ceaser_cipher('hello world', 5)).to eq('mjqqt btwqi')
+    end
+
+    it 'input blah blah blah blah blah blah with factor 10' do
+      expect(ceaser_cipher('blah blah blah blah blah blah', 10)).to eq('lvkr lvkr lvkr lvkr lvkr lvkr')
     end
 
     # TODO: test other values etc
   end
 
   # TODO: tests for encoding
-  describe 'encode_cipher' do
-    it 'check encoded value' do
+  describe 'wraparound from z to a' do
+    it 'check wraparound with factor 250' do
+      expect(ceaser_cipher('test wrap string', 250)).to eq('juij mhqf ijhydw')
     end
   end
 end

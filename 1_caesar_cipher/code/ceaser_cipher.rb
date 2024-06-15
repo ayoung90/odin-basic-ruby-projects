@@ -14,5 +14,5 @@ def ceaser_cipher(string, shift_factor)
       char
     end
   end
-  puts encoded_array.join
+  encoded_array.join
 end
