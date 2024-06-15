@@ -7,7 +7,7 @@ shift_amount = gets.chomp.to_i
 input_message = 'Please enter text for encoding: '
 print input_message
 
-while (user_input = gets.chomp.downcase)
+while (user_input = gets.chomp)
   break if user_input == '!exit'
 
   puts ceaser_cipher(user_input, shift_amount)

@@ -11,6 +11,10 @@ RSpec.describe 'Ceaser Cipher' do
       expect(ceaser_cipher('blah blah blah blah blah blah', 10)).to eq('lvkr lvkr lvkr lvkr lvkr lvkr')
     end
 
+    it 'check encoding keeps the same case' do
+      expect(ceaser_cipher('TeStER', 6)).to eq('ZkYzKX')
+    end
+
     # TODO: test other values etc
   end
 
