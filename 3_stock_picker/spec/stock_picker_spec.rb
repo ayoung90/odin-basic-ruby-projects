@@ -9,6 +9,13 @@ RSpec.describe 'Stock Picker' do
 
       expect(stock_picker(prices_array)).to eq(expected_array)
     end
+
+    it 'price array of 25' do
+      prices_array = [16, 3, 11, 7, 10, 17, 18, 13, 7, 11, 13, 6, 17, 4, 18, 13, 4, 6, 3, 18, 18, 6, 10, 6, 8]
+      expected_array = [1, 6]
+
+      expect(stock_picker(prices_array)).to eq(expected_array)
+    end
   end
 
   describe 'Handle Edge cases' do
@@ -24,6 +31,20 @@ RSpec.describe 'Stock Picker' do
       expected_array = [2, 5]
 
       expect(stock_picker(prices_array)).to eq(expected_array)
+    end
+
+    it 'Handle empty array' do
+      prices_array = []
+      expected_error = 'Price List must not be empty'
+
+      expect(stock_picker(prices_array)).to eq(expected_error)
+    end
+
+    it 'Handle non integers in array' do
+      prices_array = [1, 2, '4', 5]
+      expected_error = 'Prices must be Integers'
+
+      expect(stock_picker(prices_array)).to eq(expected_error)
     end
   end
 end

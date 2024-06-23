@@ -8,6 +8,9 @@
 # or the highest day is the first day.
 
 def stock_picker(stock_prices)
+  return 'Price List must not be empty' if stock_prices.empty?
+  return 'Prices must be Integers' unless stock_prices.filter { |num| !num.is_a? Integer } == []
+
   best_buy_index = 0
   best_sell_index = 0
   profit = 0
@@ -26,5 +29,3 @@ def stock_picker(stock_prices)
 
   [best_buy_index, best_sell_index]
 end
-
-p stock_picker([17, 3, 6, 9, 15, 8, 6, 1, 10])
