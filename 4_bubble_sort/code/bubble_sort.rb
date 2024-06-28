@@ -3,7 +3,7 @@ def bubble_sort(array)
   until sorted
     sorted = true
     array.each_index do |idx|
-      next if array.size - 1 == idx # handly last item in array
+      next if array.size - 1 == idx # handle last index
 
       item_a = array[idx]
       item_b = array[idx + 1]
@@ -11,11 +11,9 @@ def bubble_sort(array)
 
       array[idx] = item_b
       array[idx + 1] = item_a
-      sorted = false # we had to make a swap, so the array is not sorted
+      sorted = false # we had to make a swap, so it is not sorted
     end
   end
 
   array
 end
-
-p bubble_sort([4, 3, 78, 2, 0, 2])
